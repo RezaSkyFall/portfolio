@@ -1,15 +1,16 @@
 import { Margin } from "@mui/icons-material";
 import { Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Footer from "../Components/Footer";
 import MyServices from "../Components/MyServices";
 
 export default function Home() {
   return (
     <>
       <Container maxWidth='xl'>
-        <Grid container sx={{marginTop:6}}>
+        <Grid container sx={{ marginTop: 6 }}>
 
-          <Grid item xs={12} md={6} sx={{placeSelf:'center'}}>
+          <Grid item xs={12} md={6} sx={{ placeSelf: 'center' }}>
             <Typography variant="h3" sx={{ marginBottom: 3 }}>
               سلام، من رضا براتی هستم.
             </Typography>
@@ -21,16 +22,18 @@ export default function Home() {
             </Button>
           </Grid>
           <Grid item xs={12} md={6}>
-<Image src='/images/reza_barati_landing.jpg' width='640px' height='640px'
-
- style={{width:'50%',borderRadius:'50%' ,Margin:40}}/>
+            <Image src='/images/reza_barati_landing.jpg' width='640px' height='640px'
+              style={{ width: '50%', borderRadius: '50%', Margin: 40 }} />
           </Grid>
         </Grid>
       </Container>
-      <div style={{minHeight:24}}>
+      <div style={{ minHeight: 24 }}>
 
       </div>
       <MyServices />
+      <div style={{ minHeight: 24 }}>
+
+      </div>
     </>
   )
 }

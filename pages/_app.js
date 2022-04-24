@@ -7,6 +7,8 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import NavBar from "../Components/NavBar";
+import { useState } from "react";
+import Footer from "../Components/Footer";
 
 // Create rtl cache
 const cacheRtl = createCache({
@@ -20,13 +22,15 @@ function RTL(props) {
 
 function MyApp({ Component, pageProps }) {
 
+  const [IsDarkMode, setIsDarkMode] = useState(true);
   const DefaultTheme = createTheme({
     palette:{
+      mode:IsDarkMode? 'dark':'light',
       primary:{
-        main:'#14142B'
+        main:'#00e676'
       },
       secondary:{
-        main:'#4338CA'
+        main:'#00e5ff'
       }
     },
     typography: {
@@ -35,6 +39,9 @@ function MyApp({ Component, pageProps }) {
       h3:{fontSize:'1.17rem'}
     },
     direction: 'rtl',
+    shape:{
+      borderRadius:20
+    },
     components: {
       MuiCssBaseline: {
         styleOverrides: `
@@ -75,8 +82,9 @@ function MyApp({ Component, pageProps }) {
     <RTL>
     <ThemeProvider theme={DefaultTheme}>
       <CssBaseline/>
-      <NavBar />
+      <NavBar ToggleThemeMode={()=>setIsDarkMode(cur=>!cur)}/>
       <Component {...pageProps} />
+      <Footer/>
     </ThemeProvider>
     </RTL>
   )
