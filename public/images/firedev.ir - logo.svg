@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="512" viewBox="0 0 1080 512">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4cb3ca"/>
+      <stop offset="1" stop-color="#4a6ba0"/>
+    </linearGradient>
+    <filter id="Icon_metro-fire" x="131.83" y="58.475" width="299.246" height="339.195" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Icon_material-code" x="203.071" y="296.277" width="151.509" height="105.306" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Instagram_Post_3">
+      <rect width="1080" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="Instagram_Post_3" data-name="Instagram Post – 3" clip-path="url(#clip-Instagram_Post_3)">
+    <g id="Group_1" data-name="Group 1" transform="translate(149.83 70.475)">
+      <g transform="matrix(1, 0, 0, 1, -149.83, -70.47)" filter="url(#Icon_metro-fire)">
+        <path id="Icon_metro-fire-2" data-name="Icon metro-fire" d="M78.808,305.123c-20.207-42.047-9.446-66.14,6.085-88.84a141.531,141.531,0,0,0,21.391-49.466s13.37,17.38,8.022,44.564c23.62-26.293,28.076-68.183,24.511-84.226,53.389,37.311,76.206,118.1,45.456,177.969,163.551-92.537,40.682-231,19.291-246.6,7.13,15.6,8.482,42-5.922,54.814C173.258,20.878,112.969,1.928,112.969,1.928c7.13,47.683-25.847,99.824-57.647,138.785-1.117-19.014-2.3-32.134-12.3-50.329-2.244,34.54-28.641,62.7-35.789,97.3C-2.453,234.554,14.483,268.869,78.808,305.123Z" transform="translate(145.13 68.55)" fill="url(#linear-gradient)"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -149.83, -70.47)" filter="url(#Icon_material-code)">
+        <path id="Icon_material-code-2" data-name="Icon material-code" d="M45.738,70.22,19.171,43.653,45.738,17.086,37.653,9,3,43.653,37.653,78.306Zm30.032,0,26.567-26.567L75.771,17.086,83.857,9l34.653,34.653L83.857,78.306,75.771,70.22Z" transform="translate(218.07 299.28)" fill="#4a84af"/>
+      </g>
+    </g>
+    <text id="Dev.ir" transform="translate(639.17 358.525)" fill="#4cb3ca" font-size="174" font-family="Teko-Regular, Teko"><tspan x="0" y="0">Dev.ir</tspan></text>
+    <text id="Fire" transform="translate(442.076 286.523)" fill="#4a6ba0" font-size="174" font-family="Teko-Regular, Teko"><tspan x="0" y="0">Fire</tspan></text>
+  </g>
+</svg>

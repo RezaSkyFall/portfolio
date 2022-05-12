@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4cb3ca"/>
+      <stop offset="1" stop-color="#4a6ba0"/>
+    </radialGradient>
+    <filter id="Icon_metro-fire" x="245.929" y="145.886" width="610.142" height="697.271" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Icon_material-code" x="398.396" y="658.832" width="283.208" height="184.325" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Instagram_Post_2">
+      <rect width="1080" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Instagram_Post_2" data-name="Instagram Post – 2" clip-path="url(#clip-Instagram_Post_2)">
+    <g id="Ellipse_1" data-name="Ellipse 1" stroke="#707070" stroke-width="1" fill="url(#radial-gradient)">
+      <circle cx="540" cy="540" r="540" stroke="none"/>
+      <circle cx="540" cy="540" r="539.5" fill="none"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_metro-fire)">
+      <path id="Icon_metro-fire-2" data-name="Icon metro-fire" d="M166.33,663.2c-44.071-91.7-20.6-144.251,13.271-193.76,37.093-54.216,46.653-107.887,46.653-107.887s29.159,37.907,17.5,97.194c51.515-57.345,61.235-148.708,53.458-183.7,116.442,81.375,166.206,257.57,99.14,388.152,356.707-201.825,88.728-503.814,42.075-537.832,15.552,34.017,18.5,91.6-12.915,119.549C372.326,43.258,240.834,1.928,240.834,1.928c15.551,104-56.373,217.718-125.729,302.693-2.437-41.469-5.025-70.084-26.832-109.768-4.895,75.333-62.467,136.741-78.057,212.219C-10.9,509.288,26.035,584.129,166.33,663.2Z" transform="translate(259.23 155.96)" fill="#fafafa"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_material-code)">
+      <path id="Icon_material-code-2" data-name="Icon material-code" d="M94.467,140.02,37.609,83.162,94.467,26.3,77.162,9,3,83.162l74.162,74.162Zm64.274,0L215.6,83.162,158.741,26.3,176.046,9l74.162,74.162-74.162,74.162-17.3-17.3Z" transform="translate(413.4 661.83)" fill="#fafafa"/>
+    </g>
+  </g>
+</svg>

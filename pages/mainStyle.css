@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'IranYekan';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local('IranYekan'), local('IranYekan'), url('/fonts/iranyekanwebregular.woff2') format('woff2');
+    
+  }
+  @font-face {
+    font-family: 'IranYekanBold';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local('IranYekanBold'), local('IranYekanBold'), url('/fonts/iranyekanwebbold.woff2') format('woff2');
+    
+  }
+  @font-face {
+    font-family: 'Satoshi-Medium';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local('Satoshi-Medium'), local('Satoshi-Medium'), url('/fonts/Satoshi-Medium.woff2') format('woff2');
+    
+  }
+  
