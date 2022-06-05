@@ -1,4 +1,4 @@
-import { DesignServicesOutlined, DesktopWindowsOutlined, TipsAndUpdatesOutlined, TravelExploreOutlined } from "@mui/icons-material";
+import { ChevronLeft, DesignServicesOutlined, DesktopWindowsOutlined, TipsAndUpdatesOutlined, TravelExploreOutlined } from "@mui/icons-material";
 import { Box, Card, CardContent, Container, Grid, Stack, Typography } from "@mui/material";
 import { display, useTheme } from "@mui/system";
 import CategoryIcon from "./CategoryIcon";
@@ -14,55 +14,61 @@ function MyServices() {
 
         {
             title: 'برنامه نویسی تحت وب', icon: <TravelExploreOutlined htmlColor="#AD97FF" fontSize="large"/>,iconBackColor:'#F3EEFF',
-            body: 'با توجه به سرعت رشد کسب و کار های آنلاین و استارت آپ ها نیازمندی به توسعه دهنده وب بسیار شایان بوده'
+            body: 'طراحی و توسعه سایت در اصفهان با استفاده از جدیدترین تکنولوژی ها و همراهی تیمی مجرب صورت میگیرد. توسعه انواع سایت های اخباری، فروشگاه انلاین، خدماتی و…'
         },
         {
             title: 'طراحی UI/UX', icon: <DesignServicesOutlined htmlColor="#FEC5E3" fontSize="large"/>,iconBackColor:'#FFEBF6',
-            body: ''
+            body: 'تحلیل UX (تجربه کاربری) نرم افزار با توجه به سابقه کاری و ارتباط مستقیم با مشتری و درک توانایی ها و همچنین طراحی  UI (رابط کاربری) و Design System  با استفاده از ترند های سال و خلاقیت انجام میگردد.'
         },
 
         {
             title: 'راه اندازی استارت آپ', icon: <TipsAndUpdatesOutlined htmlColor="#FFE661" fontSize="large"/>,iconBackColor:'#FFF5D2',
-            body: 'با کمک تیم خلاق و متخصص ایده های شما را اجرا و به استارت آپ موفق تبدیل خواهیم کرد'
+            body: 'با کمک تیم خلاق و متخصص ایده های شما را اجرا و به استارت آپ موفق تبدیل خواهیم کرد. از لحاظ مالی نیز توسط شتاب دهنده ها میتوانیم شما را پشتیبانی کنیم.'
         },
     ]
     const theme = useTheme();
     return (
-        <>
+        <div>
             <div style={{ textAlign: 'center' }}>
+                <Stack direction='row' justifyContent='center' alignItems='center' spacing={1}>
+                <ChevronLeft color='primary' fontSize="large" />
                 <Typography variant="h2" >
-                    خدمات قابل ارائه
+             خدمات نرم افزاری و برنامه نویسی در اصفهان
                 </Typography>
-                <Typography variant="h3" sx={{ m: 2 }}>
+                </Stack>
+                   
+                <Typography variant="body1" sx={{ m: 2 }}>
                     به صورت کلی بخش هایی از خدمات نرم افزاری که در سطح پیشرفته میتونم توسعه بدم رو بخش بندی کردم.
                 </Typography>
             </div>
             
-            <Container maxWidth='xl' sx={{pt:1}}>
+            <Container maxWidth='xl'>
                 <Grid container maxWidth='xl' spacing={3} sx={{pl:2,pr:2}}>
                     {Services.map((item, index) => (
                         <Grid item xs={12} md={6} key={index}>
-                            <Card elevation={1} sx={{height:'100%'}}>
+                            <Card elevation={2} sx={{height:'100%'}}>
                                 <CardContent>
-                                    <Stack direction='row' justifyItems='center' spacing={1}>
-
-                                        {/* <Box sx={{ m: 1,p:1,borderRadius:'25px', backgroundColor: item.iconBackColor, minWidth: 76, minHeight: 76 , maxWidth: 76, maxHeight: 76
-                                    ,display:'flex',alignItems:'center',justifyContent:'center'}}>
-                                            {item.icon}
-                                        </Box> */}
+                                    
+                                    <Grid container spacing={1}>
+                                        <Grid item xs={12} >
+                                            <Stack direction='row' spacing={0} alignItems='center'>
                                         <CategoryIcon>
                                         {item.icon}
                                         </CategoryIcon>
-                                        <div>
-                                            <Typography variant="h3" gutterBottom>
+                                        <Typography variant="h3" gutterBottom>
                                                 {item.title}
                                             </Typography>
-                                            <Typography variant="body1">
+                                            </Stack>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                        
+                                           
+                                            <Typography variant="body1" sx={{pr:1,pl:1}}>
                                                 {item.body}
                                             </Typography>
-                                        </div>
-
-                                    </Stack>
+                                        
+                                            </Grid>
+                                    </Grid>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -70,7 +76,7 @@ function MyServices() {
 
                 </Grid>
             </Container>
-        </>
+        </div>
     )
 }
 

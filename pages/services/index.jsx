@@ -2,7 +2,7 @@ import { Call, ChevronLeft, ContactPageOutlined, Inventory2Outlined, LaunchOutli
 import { Box, Button, Container, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Stack, Typography, useTheme } from "@mui/material";
 import LandingImage from '../../public/images/Programmer-amico.svg';
 import Image from 'next/image'
-import CategoryIcon from "../../Components/CategoryIcon";
+import CategoryIcon from "../../components/CategoryIcon";
 
 function Services() {
     const ServecesLandingList = [

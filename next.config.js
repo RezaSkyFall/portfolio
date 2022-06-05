@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  optimizeFonts: false,
-  
-}
+// const nextConfig = {
+//   reactStrictMode: true,
+//   optimizeFonts: false,
+// }
 
-module.exports = nextConfig
+// module.exports = nextConfig
 
 
 // Example config for adding a loader that depends on babel-loader
 // This source was taken from the @next/mdx plugin source:
 // https://github.com/vercel/next.js/tree/canary/packages/next-mdx
 module.exports = {
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
+ 
   webpack: (config, options) => {
     config.module.rules.push({
     
@@ -33,5 +29,11 @@ module.exports = {
     })
 
     return config
+  },
+  experimental: {
+    outputStandalone: true,
+  },
+  images: {
+    domains: ['firedev.ir','localhost:3000'],
   },
 }

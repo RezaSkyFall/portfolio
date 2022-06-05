@@ -1,6 +1,7 @@
-import { Box, Button, Card, Container, Grid, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Card, Container, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, Paper, Stack, TextField, Typography } from '@mui/material';
 import GetInTochImage from '../../public/images/Get in touch-amico.svg'
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link'
 import { Call, Email, GridOff, Instagram, LinkedIn, Message, Send, Share, SubdirectoryArrowLeft, Telegram, WhatsApp } from '@mui/icons-material';
 function AboutUs() {
     return (
@@ -63,7 +64,9 @@ function AboutUs() {
                                                 </Stack>
                                                 <Stack sx={{ mt: 2 }}>
                                                     <Typography variant='h5' gutterBottom align='center'>0901-842-9599</Typography>
+                                                    <Link href='tel:0901-842-9599' passHref>
                                                     <Button variant='outlined' size='small'>تماس</Button>
+                                                    </Link>
                                                 </Stack>
                                             </Paper >
                                         </Grid>
@@ -83,7 +86,9 @@ function AboutUs() {
                                                 </Stack>
                                                 <Stack sx={{ mt: 2 }}>
                                                     <Typography variant='h5' gutterBottom align='center'>rezabaratipe@gmail.com</Typography>
-                                                    <Button variant='outlined' size='small'>باز کردن</Button>
+                                                    <Link href='mailto:rezabaratipe@gmail.com?Subject=ارتباط با ما firedev' passHref>
+                                                    <Button variant='outlined' size='small'>باز کردن ایمیل</Button>
+                                                    </Link>
                                                 </Stack>
                                             </Paper >
                                         </Grid>
@@ -102,18 +107,29 @@ function AboutUs() {
                                                     </Stack>
                                                 </Stack>
                                                 <Stack sx={{ mt: 2 }} direction='row' justifyContent='center' spacing={1} flexWrap='wrap'>
+                        <Link href='https://www.linkedin.com/in/reza-barati-466618228' passHref>
                                                     <Button size='small' variant='text' startIcon={<LinkedIn />}>
                                                         لینکدین
                                                     </Button>
+                                                    </Link>
+                                                    
+                        <Link href='https://www.instagram.com/rezabarati4u' passHref>
                                                     <Button size='small' variant='text' startIcon={<Instagram />}>
                                                         اینستاگرام
                                                     </Button>
+                                                    </Link>
+                                                    
+                        <Link href='https://t.me/Rezabarati4t' passHref>
                                                     <Button size='small' variant='text' startIcon={<Telegram />}>
                                                         تلگرام
                                                     </Button>
+                                                    </Link>
+                                                    
+                        <Link href='https://wa.me/989018429599' passHref>
                                                     <Button size='small' variant='text' startIcon={<WhatsApp />}>
                                                         واتس آپ
                                                     </Button>
+                                                    </Link>
                                                     
                                                 </Stack>
                                             </Paper >

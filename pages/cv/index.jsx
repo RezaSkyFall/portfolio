@@ -1,5 +1,6 @@
 import { ChevronLeft, DataObject, DesignServicesOutlined, DesktopMacOutlined, SchoolOutlined, SubdirectoryArrowLeft } from "@mui/icons-material";
-import { Chip, Container, Divider, Grid, Link, List, ListItem, ListItemIcon, ListItemText, Paper, Stack, Typography } from "@mui/material";
+import {Box, Chip, Container, Divider, Grid, Link, List, ListItem, ListItemIcon, ListItemText, Paper, Stack, Typography } from "@mui/material";
+
 import Image from 'next/image';
 
 function CvLanding() {
@@ -61,19 +62,21 @@ function CvLanding() {
                 <Grid container spacing={2} sx={{ mt: 3 }}>
                     <Grid item xs={12} md={9} sx={{ alignSelf: 'center' }}>
                         <Stack direction='row' flexWrap='wrap' spacing={1} sx={{ mb: 1 }}>
-                            <Typography variant="h2">
+
+                            <Typography variant="h1" sx={{ fontFamily: 'IranYekanBold'}}>
                                 من
-                            </Typography>
-                            <Typography variant="h2" color='primary'>
-                                رضا براتی
-                            </Typography>
-                            <Typography variant="h2">
+                                <Box sx={{color:'primary.main'}} component='span'>
+                                {" رضا براتی "}
+                            </Box>
                                 هستم برنامه نویس کامپیوتر
                             </Typography>
                         </Stack>
                         <Typography variant="body">
                             از سال 1398 شروع به برنامه نویسی کردم و طی این مدت مهارت های زیادی یاد گرفتم.
                             همیشه سعیم بر این بوده که نیاز ها به درستی تحلیل بشه و متناسب با نیاز مشتری بهترین محصول رو ارائه بدم.
+                        </Typography>
+                        <Typography variant="body1">
+                            اگه بخوام خودم رو توی چند جمله تعریف کنم میتونم بگم من آدمی با مدیریت بالا و وقت شناس هستم، از باختن خوشم نمیاد و همیشه سعی میکنم بهترین باشم.
                         </Typography>
                         <Typography variant="body">
 
@@ -83,7 +86,7 @@ function CvLanding() {
                                 <SchoolOutlined />
                             </SkillIcon>
                             <Typography variant="h3" alignSelf='center'>
-                                سوابق تحصیلی
+                                سوابق تحصیلی رضا براتی
                             </Typography>
                         </Stack>
                         <List dense sx={{ pl: 2, pt: 0 }}>
@@ -111,12 +114,13 @@ function CvLanding() {
                     </Grid>
                     <Grid item xs={12} md={3}>
                         <div>
-                            <Image src='/images/reza_barati_cv.jpg' height={2171} width={1628} style={{ borderRadius: 24 }} alt='Reza Barati Profile Image'/>
+                            <Image src='/images/reza_barati_cv.jpg' height={2171} width={1628} unoptimized
+                             style={{ borderRadius: 24 }} alt='Reza Barati Profile Image' />
                         </div>
                     </Grid>
                 </Grid>
                 <Typography variant="h2" gutterBottom sx={{ mt: 3 }} align='center'>
-                    مهارت ها
+                    مهارت های رضا براتی
                 </Typography>
                 <Typography variant="body2" gutterBottom align='center'>
                     مهارت برنامه نویسی وب به دو قسمت سمت کاربر (front-end) و برنامه نویسی سمت سرور (back-end) تقسیم شده.
@@ -140,7 +144,7 @@ function CvLanding() {
                                             </Typography>
                                             <Stack justifyContent='center' direction='row-reverse' flexWrap='wrap' spacing={1} sx={{ mb: 1 }}>
                                                 {items.items.map((child, index) => (
-                                                    <Chip label={child} size='small' variant="outlined" key={index}/>
+                                                    <Chip label={child} size='small' variant="outlined" key={index} />
                                                 ))}
                                             </Stack>
                                         </>
@@ -151,15 +155,11 @@ function CvLanding() {
                         </Grid>))}
                     <Grid item xs={12}>
                         <Typography variant="h2" gutterBottom sx={{ mt: 3 }} align='center'>
-                            نوشته ای درباره من
+                            زبان های مسلط رضا براتی
                         </Typography>
-                        <Stack direction='row'>
-                            <ChevronLeft />
-                            <Typography variant="body1">
-                                اگه بخوام خودم رو توی چند جمله تعریف کنم میتونم بگم من آدمی با مدیریت بالا و وقت شناس هستم، 
-                                
-                            </Typography>
-                        </Stack>
+                    </Grid>
+                    <Grid item xs={12}>
+
                     </Grid>
                 </Grid>
             </Container>

@@ -38,21 +38,15 @@ function ProjectsLanding() {
     ]
 const SplideRef = useRef(null)
     return (
-        <>
-        <Container>
-        <Stack direction='row' sx={{mb:1}}>
-            <Typography variant='h2' flexGrow={1}>
+        <div>
+             <Stack direction='row' justifyContent='center' alignItems='center' spacing={1}>
+                <ChevronLeft color='primary' fontSize="large" />
+                <Typography variant="h2" >
                 پروژه های انجام شده
-           </Typography>
-           {/* <Stack spacing={2} direction='row'>
-               <IconButton sx={{backgroundColor:'#EFF0F6',color:'#0c0c0c'}} onClick={()=>console.log( SplideRef.current.splide.event)}>
-                   <ChevronRight sx={{width:64,height:64}}/>
-               </IconButton>
-               <IconButton sx={{backgroundColor:'#EFF0F6',color:'#0c0c0c'}} >
-                   <ChevronLeft sx={{width:64,height:64}}/>
-               </IconButton>
-           </Stack> */}
-        </Stack>
+                </Typography>
+                </Stack>
+        <Container>
+        {/*  */}
             
         </Container>
             <Splide ref={SplideRef} options={{
@@ -88,7 +82,7 @@ const SplideRef = useRef(null)
                 ))}
 
             </Splide>
-        </>
+        </div>
     )
 }
 export default ProjectsLanding;

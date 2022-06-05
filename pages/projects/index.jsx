@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Button, Container, Grid, Stack, Typography,Link as MLink } from "@mui/material";
 import { useState } from "react";
 import Link from 'next/link';
 import Image from 'next/image';
@@ -26,7 +26,7 @@ function ProjectsLanding() {
             title: 'وب اپ دانشگاه هوشمند | CMS هوشمند پروژه و کارآموزی دانشگاه',
             body: 'نرم افزار تحت پلتفرم دسکتاپ با قابلیت های ارتباط با کالرآیدی، دریافت تماس، ایجاد مخاطب، گزارش گیری، یادداشت   و ...',
             image: '/images/projects - smart college.jpg',
-            name:'notebook'
+            name:'smartcollege'
         },
     ])
     const router= useRouter();
@@ -40,8 +40,9 @@ function ProjectsLanding() {
                     {
                         ProjectsList.map((item, index) => (
                             <Grid item xs={12} md={6} lg={4} key={index}>
-                                    <Link href={'/projects/'+item.name} passHref>
-                                        <div style={{ width: '100%', maxWidth: 640, cursor: 'pointer' }}>
+                                    <Link href={'/projects/'+item.name} passHref >
+                                        <MLink style={{ width: '100%', maxWidth: 640, cursor: 'pointer' }}
+                                        color='inherit' underline="none">
                                             <div style={{ display: 'block' }}>
                                                 <Image src={item.image} layout="responsive" width={1080} height={770} alt={item.title}
                                                     style={{ borderRadius: '24px' }} priority quality={100} unoptimized
@@ -60,7 +61,7 @@ function ProjectsLanding() {
                                                     ادامه
                                                 </Button>
                                             </Stack>
-                                        </div>
+                                        </MLink>
                                     </Link>
                             </Grid>
                         ))

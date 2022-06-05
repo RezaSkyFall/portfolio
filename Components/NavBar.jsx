@@ -1,8 +1,9 @@
-import { Code, DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
-import { ListItemButton, List, ListItemText, ListItem, AppBar, Toolbar, Menu, MenuItem, Typography, useTheme, IconButton, useMediaQuery } from "@mui/material";
+import { Code, DarkModeOutlined, LightModeOutlined, Menu as MenuIcon } from "@mui/icons-material";
+import { ListItemButton, List, ListItemText, ListItem, AppBar, Toolbar, SwipeableDrawer, MenuItem, Typography, useTheme, IconButton, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import logo from '../public/images/firedev.ir - logo.png';
 
 function NavBar({ ToggleThemeMode }) {
@@ -17,12 +18,15 @@ function NavBar({ ToggleThemeMode }) {
     const router = useRouter();
     const theme = useTheme();
 
-    const IsMobileMenu = useMediaQuery('(min-width:750px)');
-
+    const IsMobileMenu = !useMediaQuery('(min-width:750px)',{noSsr:true});
+    const [openMenu, setOpenMenu] = useState(false);
+    const toggleDrawer =(val)=>{
+        setOpenMenu(val);
+    }
 
     return (
         <>
-            <AppBar elevation={0} position='static' sx={{ backgroundColor: 'inherit', color: 'inherit' }}>
+            <AppBar elevation={0} position='fixed' color="transparent" sx={{backdropFilter:'blur(20px)'}}>
                 <Toolbar variant="dense">
                     {/* <div style={{ display: 'inline-flex' }}>
                     <Code sx={{ margin: 2, alignSelf: 'center' }} color='primary' />
@@ -30,10 +34,21 @@ function NavBar({ ToggleThemeMode }) {
                            FireDev.ir
                         </Typography>
                     </div> */}
-                    <div style={{width:140}}>
+                    {
+                        IsMobileMenu ? 
+                        <IconButton color="inherit" onClick={()=>toggleDrawer(true)}>
+                            <MenuIcon />
+                        </IconButton> 
+                        :
+                        <>
+                        </>
+                    }
+                    <Link href='/' passHref>
+                    <a style={{width:120,cursor:'pointer'}} >
                     <Image src={logo} width={1080} height={512} layout='responsive' alt="firedev.ir logo"/>
-                    </div>
-                    {!IsMobileMenu ?<></>:
+                    </a>
+                    </Link>
+                    {IsMobileMenu ?<></>:
                     <List component='nav' sx={{
                         display: 'inline-flex', position: 'absolute'
                         , transform: 'translateX(-50%)', left: '50%'
@@ -41,7 +56,7 @@ function NavBar({ ToggleThemeMode }) {
                         {NavLinks.map((item,index) =>
                         (
                             <Link href={item.link} key={index} passHref>
-                                <ListItemButton  sx={{color:(item.link === "/" ? router.pathname === '/' : router.pathname.startsWith(item.link)) ? 'primary.main':'inherit'}}>
+                                <ListItemButton component="a" sx={{color:(item.link === "/" ? router.pathname === '/' : router.pathname.startsWith(item.link)) ? 'primary.main':'inherit'}}>
                                     <ListItemText primary={item.title} />
                                 </ListItemButton>
                             </Link>
@@ -55,6 +70,33 @@ function NavBar({ ToggleThemeMode }) {
 </IconButton>
                 </Toolbar>
             </AppBar>
+            {
+                !IsMobileMenu ? <></> :
+                <SwipeableDrawer
+            anchor='top'
+            open={openMenu}
+            onClose={()=>toggleDrawer(false)}
+            onOpen={()=>toggleDrawer(true)}
+          >
+              <List  dense>
+                        {
+                            NavLinks.map((item,index) => (
+                                <Link href={item.link} key={index} passHref>
+                                <ListItemButton onClick={()=>toggleDrawer(false)} 
+                                selected={(item.link === '/' ? router.pathname === '/' : router.pathname.startsWith(item.link) ) && item.link !== ''}>
+                                    <ListItemText>
+                                        {item.title}
+                                    </ListItemText>
+                                </ListItemButton>
+                                </Link>
+                            ))
+                        }
+
+                    </List>
+          </SwipeableDrawer>
+}
+            <div style={{minHeight:67}} />
+
         </>
     )
 }

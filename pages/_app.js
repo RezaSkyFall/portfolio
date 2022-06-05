@@ -6,11 +6,12 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
-import NavBar from "../Components/NavBar";
-import { useState } from "react";
-import Footer from "../Components/Footer";
+import NavBar from "../components/NavBar";
+import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import './mainStyle.css'
 import Head from "next/head";
+import useMediaQuery from '@mui/material/useMediaQuery';  
 // Create rtl cache
 const cacheRtl = createCache({
   key: 'muirtl',
@@ -21,9 +22,15 @@ function RTL(props) {
   return <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>;
 }
 
-function MyApp({ Component, pageProps }) {
 
+function MyApp({ Component, pageProps }) {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', { noSsr: true }) ;
+  useEffect(() => {
+   setIsDarkMode(prefersDarkMode)
+  }, [prefersDarkMode])
+  
   const [IsDarkMode, setIsDarkMode] = useState(true);
+  
   let DefaultTheme = createTheme({
     palette:{
       mode:IsDarkMode? 'dark':'light',
@@ -34,15 +41,15 @@ function MyApp({ Component, pageProps }) {
         main:'#4A6BA0'
       },
       background:{
-        default : IsDarkMode ? '#121212':'#f8f9fa',
-        paper: IsDarkMode ? '#121212':'#FCFCFC',
+        default : IsDarkMode ? '#202023':'#f8f9fa',
+        paper: IsDarkMode ? '#202124':'#FCFCFC',
       }
     },
     typography: {
       fontFamily: 'IranYekan,IranYekanBold,Satoshi-Medium',
       
-      h1:{fontSize:'48px',lineHeight:1.4},
-      h2:{fontSize:'32px',lineHeight:1.3},
+      h1:{fontSize:'42px',lineHeight:1.4},
+      h2:{fontSize:'30px',lineHeight:1.3},
       h3:{fontSize:'24px'},
       h4:{fontSize:'1.272em'},
       h5:{fontSize:'1.333em'},
@@ -50,8 +57,8 @@ function MyApp({ Component, pageProps }) {
     },
     shadows:{
       "0":"none",
-      "1":"2px 2px 8px rgba(71, 82, 115,.1), -2px -2px 8px rgba(76, 179, 202,.2)",
-      "2":"4px 4px 18px rgba(71, 82, 115,.1), -4px -4px 18px rgba(76, 179, 202,.2)",
+      "1":"-2px 2px 8px rgba(71, 82, 115,.1), 2px -2px 8px rgba(76, 179, 202,.2)",
+      "2":"-4px 4px 18px rgba(71, 82, 115,.1), 4px -4px 18px rgba(76, 179, 202,.2)",
       // '3:''20px 20px 60px #bebebe, -20px -20px 60px #ffffff'},
       // '4:''20px 20px 60px #bebebe, -20px -20px 60px #ffffff'},
       // '5:''20px 20px 60px #bebebe, -20px -20px 60px #ffffff'},
@@ -119,6 +126,14 @@ function MyApp({ Component, pageProps }) {
     ::-webkit-scrollbar-track {
         background: transparent;
     }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
       `,
       }},
   })
